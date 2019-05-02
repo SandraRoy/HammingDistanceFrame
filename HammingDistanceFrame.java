@@ -170,7 +170,7 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 	     layoutConst = new GridBagConstraints();
 	     layoutConst.insets = new Insets(1, 10, 10, 10);
 	     layoutConst.fill = GridBagConstraints.HORIZONTAL;
-	     layoutConst.gridx = 0;
+	     layoutConst.gridx = 6;
 	     layoutConst.gridy = 1;
 	     layoutConst.gridwidth = 3;
 	     panel1.add(Distance, layoutConst);
