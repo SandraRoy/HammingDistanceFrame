@@ -174,7 +174,7 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 		devastated.addActionListener(this);
 		
 		eh= new JRadioButton("eh");
-		eh.addActionListener(this); //assign ActionListener to button
+		eh.addActionListener(this); //assign ActionListener to buttons
 
 		//Dropdown setup
 		read("Mesonet.txt");
@@ -487,7 +487,7 @@ this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
 	         
 	      }
 	
-	public int findDistance(String s, String s1)//WEST and BESS
+	public int findDistance(String s, String s1)
 	{
 		int distance=0;
 		for(int i=0;i<=3;i++)// loops through every character of the string
@@ -501,7 +501,7 @@ this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
 	public int[] numberNodes(String s)
 	{   int distance;
 
-	int count0=0, count1=0, count2=0, count3=0, count4=0; //4 possible distances
+	int count0=0, count1=0, count2=0, count3=0, count4=0; //5 possible distances
 
 	for(int i=0;i<Words.size();i++)// looping through words in Mesonet.txt
 	{ 
@@ -525,7 +525,7 @@ this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
 	return count;
 	}
 
-	/* Called when button is pressed. Converts height to cm. */
+	
 	   
 	   
 //Back End
