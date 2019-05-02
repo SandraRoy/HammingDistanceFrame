@@ -19,6 +19,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JSlider;
 import javax.swing.JTextArea;
@@ -62,6 +63,12 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 	private JSlider Rate;
 	private JTextField EnterRate;
 	private JLabel AskRate;
+	private JLabel Feelings;
+	private JRadioButton happy;
+	private JRadioButton devastated;
+	private JRadioButton eh;
+	
+	
 	
 
 	public HammingDistanceFrame() throws IOException
@@ -90,12 +97,13 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 		//label setup
 		Enter = new JLabel("Enter Hamming Dist:");
 		Compare=new JLabel("Compare With:");
-		AskRate=new JLabel("Rate this:");
+		AskRate=new JLabel("Rate this program:");
 		d0=new JLabel("Distance0");
 		d1=new JLabel("Distance1");
 		d2=new JLabel("Distance2");
 		d3=new JLabel("Distance3");
 		d4=new JLabel("Distance4");
+		Feelings=new JLabel("How are you feeling?");
 
 
 
@@ -146,6 +154,15 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 
 		Add = new JButton("Add Station");
 		Add.addActionListener(this);
+		
+		happy=new JRadioButton("happy");
+		happy.addActionListener(this);
+		
+		devastated=new JRadioButton("sad");
+		devastated.addActionListener(this);
+		
+		eh= new JRadioButton("eh");
+		eh.addActionListener(this);
 
 		//Dropdown setup
 		read("Mesonet.txt");
@@ -190,7 +207,7 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 	     layoutConst = new GridBagConstraints();
 	      layoutConst.insets = new Insets(10, 10, 1, 1);
 	      layoutConst.anchor = GridBagConstraints.LINE_START;
-	      layoutConst.gridx = 22;
+	      layoutConst.gridx = 20;
 	      layoutConst.gridy = 0;
 	      layoutConst.gridwidth = 1;
 	      panel1.add(AskRate, layoutConst);
@@ -206,12 +223,64 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 	     this.add(panel1);
 	     
 	     layoutConst = new GridBagConstraints();
-	      layoutConst.insets = new Insets(10, -90, 1, 10);
-	      layoutConst.fill = GridBagConstraints.HORIZONTAL;
+	      layoutConst.insets = new Insets(10, 1, 1, 10);
+	      layoutConst.fill = GridBagConstraints.LINE_END;
 	      layoutConst.gridx = 25;
 	      layoutConst.gridy = 0;
 	      layoutConst.gridwidth = 1;
 	     panel1.add(EnterRate, layoutConst);
+	     this.add(panel1);
+	     
+	    layoutConst = new GridBagConstraints();
+	     layoutConst.insets = new Insets(1, 10, 10, 10);
+	     layoutConst.fill = GridBagConstraints.LINE_END;
+	     layoutConst.gridx = 20;
+	     layoutConst.gridy = 2;
+	     layoutConst.gridwidth = 3;
+	     panel1.add(Feelings, layoutConst);
+	     this.add(panel1);
+	     
+	     layoutConst = new GridBagConstraints();
+	     layoutConst.insets = new Insets(20, 10, 10, 10);
+	     layoutConst.fill = GridBagConstraints.LINE_END;
+	     layoutConst.gridx = 20;
+	     layoutConst.gridy = 4;
+	     layoutConst.gridwidth = 3;
+	     panel1.add(happy, layoutConst);
+	     this.add(panel1);
+	     
+	     layoutConst = new GridBagConstraints();
+	     layoutConst.insets = new Insets(20, 10, 10, 10);
+	     layoutConst.fill = GridBagConstraints.LINE_END;
+	     layoutConst.gridx = 22;
+	     layoutConst.gridy = 4;
+	     layoutConst.gridwidth = 3;
+	     panel1.add(devastated, layoutConst);
+	     this.add(panel1);
+	     
+	     layoutConst = new GridBagConstraints();
+	     layoutConst.insets = new Insets(20, 10, 10, 10);
+	     layoutConst.fill = GridBagConstraints.LINE_END;
+	     layoutConst.gridx = 23;
+	     layoutConst.gridy = 4;
+	     layoutConst.gridwidth = 3;
+	     panel1.add(eh, layoutConst);
+	     this.add(panel1);
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+	     //layoutConst = new GridBagConstraints();
+	     layoutConst.insets = new Insets(1, 10, 10, 10);
+	     layoutConst.fill = GridBagConstraints.LINE_END;
+	     layoutConst.gridx = 20;
+	     layoutConst.gridy = 2;
+	     layoutConst.gridwidth = 3;
+	     panel1.add(Feelings, layoutConst);
 	     this.add(panel1);
 	     
 	     layoutConst = new GridBagConstraints();
@@ -451,7 +520,7 @@ this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
 		{
 			Words.add(strg.substring(0,4));// Takes one word at a time and omits spaces
 			strg=br.readLine();
-			System.out.println(strg);// Reads mesonet.txt in
+			
 		}
 		br.close();
 	}
@@ -467,23 +536,23 @@ this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
 	public void actionPerformed(ActionEvent event) 
 	{
 		if(event.getSource()==Show)
-		{
+		{	String station="";
 			String word;          // User defined height in feet
 		      int Val=Distance.getValue();          // User defined height in inches
 		            // Corresponding height in cm
 		      
 		      word = Menu.getSelectedItem().toString();  
-		      try {
+		      /**try {
 				read("Mesonet.txt");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
-		      for(int i=0;i<Words.size();i++)
+			}*/
+		      for(String s: Words)
 		      {
-		    	  if(findDistance(word,Words.get(i))==Val)
+		    	  if(findDistance(word,s)==Val)
 		    	  {
-		    		 station = station + Words.get(i) + "\n";
+		    		 station = station + s + "\n";
 		    	  }
 		    	 
 		      }
