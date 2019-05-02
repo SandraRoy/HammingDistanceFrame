@@ -68,9 +68,10 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 	private JTextArea Display;
 	//Slider
 	private JSlider Distance;
-	
-	private JComboBox Menu;
 	private JSlider Rate;
+	//Dropdown box
+	private JComboBox Menu;
+	
 	
 	
 	private JRadioButton happy;
