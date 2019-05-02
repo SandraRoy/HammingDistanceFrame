@@ -57,6 +57,8 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 	private JTextArea Display;
 	private JSlider Distance;
 	private JComboBox Menu;
+	private JSlider Rate;
+	
 
 	public HammingDistanceFrame() throws IOException
 	{
@@ -69,6 +71,16 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 		Distance.setMajorTickSpacing(1);	
 		Distance.setPaintTicks(true);
 		Distance.setPaintLabels(true);
+		
+		int minSlider1=0;
+		int maxSlider1=5;
+		int init1=0;
+		
+		Rate = new JSlider(minSlider1, maxSlider1, init1);
+		Rate.addChangeListener(this); 
+			Rate.setMajorTickSpacing(1);	
+			Rate.setPaintTicks(true);
+			Rate.setPaintLabels(true);
 
 		setTitle("Hamming Distance");
 		//label setup
@@ -166,14 +178,14 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 	     panel1.add(Distance, layoutConst);
 	     this.add(panel1);
 	     
-	     //Rate this application
+	   //Rate this application
 	     layoutConst = new GridBagConstraints();
 	     layoutConst.insets = new Insets(1, 10, 10, 10);
-	     layoutConst.fill = GridBagConstraints.HORIZONTAL;
+	     layoutConst.fill = GridBagConstraints.LINE_END;
 	     layoutConst.gridx = 6;
 	     layoutConst.gridy = 1;
 	     layoutConst.gridwidth = 3;
-	     panel1.add(Distance, layoutConst);
+	     panel1.add(Rate, layoutConst);
 	     this.add(panel1);
 	     
 	     layoutConst = new GridBagConstraints();
