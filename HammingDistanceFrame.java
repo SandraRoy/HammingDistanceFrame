@@ -73,7 +73,7 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 	private JComboBox Menu;
 	
 	
-	
+	//Radio buttons
 	private JRadioButton happy;
 	private JRadioButton devastated;
 	private JRadioButton eh;
