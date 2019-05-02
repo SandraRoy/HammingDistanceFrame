@@ -104,7 +104,7 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 			Rate.setPaintTicks(true);
 			Rate.setPaintLabels(true);
 
-		setTitle("Hamming Distance");
+		setTitle("Hamming Distance");// Frame title
 		//label setup
 		Enter = new JLabel("Enter Hamming Dist:");
 		Compare=new JLabel("Compare With:");
