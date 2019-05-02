@@ -40,6 +40,7 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 	 */
 	private static final int PANEL_WIDTH = FRAME_WIDTH;
 	private static final int PANEL_HEIGHT = 900;
+	//Buttons
 	private JButton Show;
 	private JButton Calculate;
 	private JButton Add;
