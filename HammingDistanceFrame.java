@@ -27,7 +27,7 @@ import javax.swing.event.ChangeListener;
 
 
 public class HammingDistanceFrame extends JFrame implements  ChangeListener, ActionListener {
-	private static final int FRAME_WIDTH = 500;
+	private static final int FRAME_WIDTH = 600;
 	private static final int FRAME_HEIGHT = 1800;
 	private ArrayList<String> Words=new ArrayList();
 
@@ -125,7 +125,7 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 		Calculate.addActionListener(this);
 
 		Add = new JButton("Add Station");
-		//Add.addActionListener(this);
+		Add.addActionListener(this);
 
 		//Dropdown setup
 		read("Mesonet.txt");
@@ -137,6 +137,7 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 		GridBagConstraints layoutConst = null;
 
 		JPanel panel1=new JPanel(new GridBagLayout());
+		JPanel panel2 =new JPanel(new GridBagLayout());
 		
 		layoutConst = new GridBagConstraints();
 	      layoutConst.insets = new Insets(10, 10, 1, 1);
@@ -156,6 +157,16 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 	     panel1.add(EnterDistance, layoutConst);
 	     this.add(panel1);
 	     
+	     layoutConst = new GridBagConstraints();
+	     layoutConst.insets = new Insets(1, 10, 10, 10);
+	     layoutConst.fill = GridBagConstraints.HORIZONTAL;
+	     layoutConst.gridx = 0;
+	     layoutConst.gridy = 1;
+	     layoutConst.gridwidth = 3;
+	     panel1.add(Distance, layoutConst);
+	     this.add(panel1);
+	     
+	     //Rate this application
 	     layoutConst = new GridBagConstraints();
 	     layoutConst.insets = new Insets(1, 10, 10, 10);
 	     layoutConst.fill = GridBagConstraints.HORIZONTAL;
@@ -317,7 +328,8 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 	     layoutConst.gridwidth = 2;
 	     panel1.add(AddStation, layoutConst);
 	     this.add(panel1);
-
+	     
+	     
 	     
 
 this.setVisible(true);
@@ -441,11 +453,17 @@ this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
 		}
 		if(event.getSource()==Add)
 		{
-			if((DefaultComboBoxModel)(Menu).);
+			String word=AddStation.getText();
+			if(((DefaultComboBoxModel)Menu.getModel()).getIndexOf(word)==-1)
+			{
+				Menu.addItem(word);
+			}
+			
+
 
 		}
 	}
-
+	
 }
 
 
