@@ -98,7 +98,7 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 		int maxSlider1=5;
 		int init1=0;
 		
-		Rate = new JSlider(minSlider1, maxSlider1, init1);
+		Rate = new JSlider(minSlider1, maxSlider1, init1);// Slider to rate the program
 		Rate.addChangeListener(this); 
 			Rate.setMajorTickSpacing(1);	
 			Rate.setPaintTicks(true);
