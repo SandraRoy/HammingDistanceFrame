@@ -174,7 +174,7 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 		devastated.addActionListener(this);
 		
 		eh= new JRadioButton("eh");
-		eh.addActionListener(this);
+		eh.addActionListener(this); //assign ActionListener to button
 
 		//Dropdown setup
 		read("Mesonet.txt");
