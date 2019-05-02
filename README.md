@@ -1,4 +1,6 @@
 # Project5
+### UML
+![](./UML.PNG?raw=true)
 **_public class HammingDistanceFrame_**
 The class implements ChangeListener and ActionListener in order to implememnt any changes through the JComponents. First appproach was to create the front end using GUI componenets and I derived my back end(logic) from Project 1 in 
 order to find the Hamming Distance.
