@@ -61,6 +61,7 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 	private JComboBox Menu;
 	private JSlider Rate;
 	private JTextField EnterRate;
+	private JLabel AskRate;
 	
 
 	public HammingDistanceFrame() throws IOException
@@ -186,6 +187,15 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 	     
 	   //Rate this application
 	     layoutConst = new GridBagConstraints();
+	      layoutConst.insets = new Insets(10, 10, 1, 1);
+	      layoutConst.anchor = GridBagConstraints.LINE_START;
+	      layoutConst.gridx = 22;
+	      layoutConst.gridy = 0;
+	      layoutConst.gridwidth = 1;
+	      panel1.add(Enter, layoutConst);
+	      this.add(panel1);
+	     
+	     layoutConst = new GridBagConstraints();
 	     layoutConst.insets = new Insets(1, 10, 10, 10);
 	     layoutConst.fill = GridBagConstraints.LINE_END;
 	     layoutConst.gridx = 20;
@@ -197,7 +207,7 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 	     layoutConst = new GridBagConstraints();
 	      layoutConst.insets = new Insets(10, 1, 1, 10);
 	      layoutConst.fill = GridBagConstraints.HORIZONTAL;
-	      layoutConst.gridx = 22;
+	      layoutConst.gridx = 25;
 	      layoutConst.gridy = 0;
 	      layoutConst.gridwidth = 1;
 	     panel1.add(EnterRate, layoutConst);
@@ -376,7 +386,8 @@ this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
 	         sliderVal = Distance.getValue();      // Get slider value
 	         strSliderVal = Integer.toString(sliderVal); // Convert to int
 	         EnterDistance.setText(strSliderVal); 
-	      }// Update display
+	      }
+	      // Update display
 	         if (sourceEvent == Rate) {
 		         sliderVal = Rate.getValue();      // Get slider value
 		         strSliderVal = Integer.toString(sliderVal); // Convert to int
