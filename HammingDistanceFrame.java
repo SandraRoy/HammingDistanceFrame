@@ -557,11 +557,11 @@ this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
 	{
 		if(event.getSource()==Show)
 		{	String station="";
-			String word;          // User defined height in feet
-		      int Val=Distance.getValue();          // User defined height in inches
-		            // Corresponding height in cm
+			String word;          // 
+		      int Val=Distance.getValue();          
+		          
 		      
-		      word = Menu.getSelectedItem().toString();  
+		      word = Menu.getSelectedItem().toString();  //gets item chosen in the JComboBox menu
 		     /* try {
 				read("Mesonet.txt");
 			} catch (IOException e) {
