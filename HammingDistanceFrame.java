@@ -105,6 +105,7 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 			Rate.setPaintLabels(true);
 
 		setTitle("Hamming Distance");// Frame title
+		
 		//label setup
 		Enter = new JLabel("Enter Hamming Dist:");
 		Compare=new JLabel("Compare With:");
@@ -125,16 +126,12 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 		EnterRate=new JTextField(10);
 		EnterRate.setEditable(true);
 		
-
 		Dist1=new JTextField(10);
 		Dist1.setEditable(true);
 		
-
-
 		Dist2 =new JTextField(10);
 		Dist2.setEditable(true);
 		
-
 		Dist3 =new JTextField(10);
 		Dist3.setEditable(true);
 		
@@ -147,7 +144,7 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 		Dist4.setEditable(true);
 		
 		
-
+//Set up the text area
 		AddStation =new JTextArea(2,10);
 		AddStation.setEditable(true);
 		AddStation.setText("ZERO");
