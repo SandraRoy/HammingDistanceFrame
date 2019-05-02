@@ -139,6 +139,9 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 		Dist0 =new JTextField(10);
 		Dist0.setEditable(true);
 		
+		 message= new JTextField(10);
+			message.setEditable(true);
+		
 
 		Dist4 =new JTextField(10);
 		Dist4.setEditable(true);
@@ -153,10 +156,6 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 		Display =new JTextArea(10,20);
 		JScrollPane scrollPane=new JScrollPane(Display);
 		
-		
-		
-	 message= new JTextField(10);
-	message.setEditable(true);
 	 
 		//Buttons setup
 		Show = new JButton("Show Station");
