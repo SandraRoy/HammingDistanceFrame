@@ -52,6 +52,9 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 	private JLabel d2;
 	private JLabel d3;
 	private JLabel d4;
+	private JLabel AskRate;
+	private JLabel Feelings;
+	//Text boxes
 	private JTextField EnterDistance;
 	private JTextField Dist1;
 	private JTextField Dist2;
@@ -59,15 +62,16 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 	private JTextField Dist4;
 	private JTextField Dist0;
 	private JTextField message;
+	private JTextField EnterRate;
 	
 	private JTextArea AddStation;
 	private JTextArea Display;
 	private JSlider Distance;
+	
 	private JComboBox Menu;
 	private JSlider Rate;
-	private JTextField EnterRate;
-	private JLabel AskRate;
-	private JLabel Feelings;
+	
+	
 	private JRadioButton happy;
 	private JRadioButton devastated;
 	private JRadioButton eh;
@@ -148,6 +152,8 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 
 		Display =new JTextArea(10,20);
 		JScrollPane scrollPane=new JScrollPane(Display);
+		
+		
 		
 	 message= new JTextField(10);
 	message.setEditable(true);
