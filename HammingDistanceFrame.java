@@ -82,14 +82,15 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 	
 
 	public HammingDistanceFrame() throws IOException
-	{
+	{	
+		
 		int minSlider=1;
 		int maxSlider=4;
 		int init=2;
 
 		Distance = new JSlider(minSlider, maxSlider, init);
-	Distance.addChangeListener(this); // Use HeightConverter's stateChanged()
-		Distance.setMajorTickSpacing(1);	
+		Distance.addChangeListener(this); 
+		Distance.setMajorTickSpacing(1);// sets the major spacing between points at a distance of one	
 		Distance.setPaintTicks(true);
 		Distance.setPaintLabels(true);
 		
