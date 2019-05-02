@@ -44,6 +44,7 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 	private JButton Show;
 	private JButton Calculate;
 	private JButton Add;
+	//JLabel
 	private JLabel Compare;
 	private JLabel Enter;
 	private JLabel d0;
