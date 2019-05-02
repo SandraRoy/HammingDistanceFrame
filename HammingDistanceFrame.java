@@ -551,7 +551,7 @@ this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
 		
 		
 	}
-	String station = "";
+	
 	@Override
 	public void actionPerformed(ActionEvent event) 
 	{
@@ -584,7 +584,7 @@ this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
 			int[]distance=numberNodes(word);
 			
 			Dist0.setText(String.valueOf(distance[0]));
-			Dist1.setText(String.valueOf(distance[1]));
+			Dist1.setText(String.valueOf(distance[1]));//displays number of nodes for chosen word
 			Dist2.setText(String.valueOf(distance[2]));
 			Dist3.setText(String.valueOf(distance[3]));
 			Dist4.setText(String.valueOf(distance[4]));
