@@ -30,8 +30,8 @@ import javax.swing.event.ChangeListener;
 
 public class HammingDistanceFrame extends JFrame implements  ChangeListener, ActionListener {
 	private static final int FRAME_WIDTH = 600;
-	private static final int FRAME_HEIGHT = 1800;
-	private ArrayList<String> Words=new ArrayList();
+	private static final int FRAME_HEIGHT = 2000;
+	private ArrayList<String> Words=new ArrayList();// ArrayList to read Mesonet.txt
 	
 
 
@@ -56,6 +56,8 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 	private JTextField Dist3;
 	private JTextField Dist4;
 	private JTextField Dist0;
+	private JTextField message;
+	
 	private JTextArea AddStation;
 	private JTextArea Display;
 	private JSlider Distance;
@@ -135,7 +137,7 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 		Dist4 =new JTextField(10);
 		Dist4.setEditable(true);
 		
-
+		
 
 		AddStation =new JTextArea(2,10);
 		AddStation.setEditable(true);
@@ -144,7 +146,10 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 
 		Display =new JTextArea(10,20);
 		JScrollPane scrollPane=new JScrollPane(Display);
-
+		
+	 message= new JTextField(10);
+	message.setEditable(true);
+	 
 		//Buttons setup
 		Show = new JButton("Show Station");
 		Show.addActionListener(this);
@@ -249,6 +254,16 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 	     panel1.add(happy, layoutConst);
 	     this.add(panel1);
 	     
+	     
+	    layoutConst = new GridBagConstraints();
+	     layoutConst.insets = new Insets(50, 10, 10, 10);
+	     layoutConst.fill = GridBagConstraints.HORIZONTAL;
+	     layoutConst.gridx = 20;
+	     layoutConst.gridy = 22;
+	     layoutConst.gridwidth = 8;
+	     panel1.add(message, layoutConst);
+	     this.add(panel1);
+	     
 	     layoutConst = new GridBagConstraints();
 	     layoutConst.insets = new Insets(20, 10, 10, 10);
 	     layoutConst.fill = GridBagConstraints.LINE_END;
@@ -257,6 +272,8 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 	     layoutConst.gridwidth = 3;
 	     panel1.add(devastated, layoutConst);
 	     this.add(panel1);
+	     
+	 
 	     
 	     layoutConst = new GridBagConstraints();
 	     layoutConst.insets = new Insets(20, 10, 10, 10);
@@ -267,11 +284,7 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 	     panel1.add(eh, layoutConst);
 	     this.add(panel1);
 	     
-	     
-	     
-	     
-	     
-	     
+	    
 	     
 	     
 	     //layoutConst = new GridBagConstraints();
@@ -542,7 +555,7 @@ this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
 		            // Corresponding height in cm
 		      
 		      word = Menu.getSelectedItem().toString();  
-		      /**try {
+		     /* try {
 				read("Mesonet.txt");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -577,10 +590,22 @@ this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
 			{
 				Menu.addItem(word);
 			}
-			
-
-
 		}
+		if(event.getSource()==happy)
+		{
+			message.setText("Awesome! Summer's here");
+		}
+		
+		if(event.getSource()==devastated)
+		{
+			message.setText("Your mind is powerful, and you are rad!");
+		}
+		
+		if(event.getSource()==eh)
+		{
+			message.setText("Fair enough");
+		}
+		
 	}
 	
 }
