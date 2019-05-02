@@ -10,6 +10,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import javax.swing.BoxLayout;
 import javax.swing.DefaultComboBoxModel;
@@ -30,6 +31,7 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 	private static final int FRAME_WIDTH = 600;
 	private static final int FRAME_HEIGHT = 1800;
 	private ArrayList<String> Words=new ArrayList();
+	
 
 
 	/**
@@ -58,6 +60,7 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 	private JSlider Distance;
 	private JComboBox Menu;
 	private JSlider Rate;
+	private JTextField EnterRate;
 	
 
 	public HammingDistanceFrame() throws IOException
@@ -97,6 +100,9 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 		//Text box setup
 		EnterDistance = new JTextField(10);
 		EnterDistance.setEditable(true);
+		
+		EnterRate=new JTextField(10);
+		EnterRate.setEditable(true);
 		
 
 		Dist1=new JTextField(10);
@@ -182,10 +188,19 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 	     layoutConst = new GridBagConstraints();
 	     layoutConst.insets = new Insets(1, 10, 10, 10);
 	     layoutConst.fill = GridBagConstraints.LINE_END;
-	     layoutConst.gridx = 6;
+	     layoutConst.gridx = 20;
 	     layoutConst.gridy = 1;
 	     layoutConst.gridwidth = 3;
 	     panel1.add(Rate, layoutConst);
+	     this.add(panel1);
+	     
+	     layoutConst = new GridBagConstraints();
+	      layoutConst.insets = new Insets(10, 1, 1, 10);
+	      layoutConst.fill = GridBagConstraints.HORIZONTAL;
+	      layoutConst.gridx = 22;
+	      layoutConst.gridy = 0;
+	      layoutConst.gridwidth = 1;
+	     panel1.add(EnterRate, layoutConst);
 	     this.add(panel1);
 	     
 	     layoutConst = new GridBagConstraints();
@@ -350,7 +365,9 @@ this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
 	}
 	public void stateChanged(ChangeEvent event) {
 	      int sliderVal;            // Slider value (int)
-	      String strSliderVal;      // Slider value (string)
+	      String strSliderVal; 	//String slider
+	      
+	      
 
 	      // Get source of event 
 	      JSlider sourceEvent = (JSlider) event.getSource();
@@ -358,9 +375,17 @@ this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
 	      if (sourceEvent == Distance) {
 	         sliderVal = Distance.getValue();      // Get slider value
 	         strSliderVal = Integer.toString(sliderVal); // Convert to int
-	         EnterDistance.setText(strSliderVal);        // Update display
+	         EnterDistance.setText(strSliderVal); 
+	      }// Update display
+	         if (sourceEvent == Rate) {
+		         sliderVal = Rate.getValue();      // Get slider value
+		         strSliderVal = Integer.toString(sliderVal); // Convert to int
+		         EnterRate.setText(strSliderVal);  
+	         }
+	     
+	         
 	      }
-	}
+	
 	public int findDistance(String s, String s1)//WEST and BESS
 	{
 		int distance=0;
@@ -465,6 +490,7 @@ this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
 		}
 		if(event.getSource()==Add)
 		{
+			
 			String word=AddStation.getText();
 			if(((DefaultComboBoxModel)Menu.getModel()).getIndexOf(word)==-1)
 			{
