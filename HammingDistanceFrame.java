@@ -90,6 +90,7 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 		//label setup
 		Enter = new JLabel("Enter Hamming Dist:");
 		Compare=new JLabel("Compare With:");
+		AskRate=new JLabel("Rate this:");
 		d0=new JLabel("Distance0");
 		d1=new JLabel("Distance1");
 		d2=new JLabel("Distance2");
@@ -192,7 +193,7 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 	      layoutConst.gridx = 22;
 	      layoutConst.gridy = 0;
 	      layoutConst.gridwidth = 1;
-	      panel1.add(Enter, layoutConst);
+	      panel1.add(AskRate, layoutConst);
 	      this.add(panel1);
 	     
 	     layoutConst = new GridBagConstraints();
@@ -205,7 +206,7 @@ public class HammingDistanceFrame extends JFrame implements  ChangeListener, Act
 	     this.add(panel1);
 	     
 	     layoutConst = new GridBagConstraints();
-	      layoutConst.insets = new Insets(10, 1, 1, 10);
+	      layoutConst.insets = new Insets(10, -90, 1, 10);
 	      layoutConst.fill = GridBagConstraints.HORIZONTAL;
 	      layoutConst.gridx = 25;
 	      layoutConst.gridy = 0;
